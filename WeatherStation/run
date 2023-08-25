@@ -1,0 +1,4 @@
+#!/bin/sh
+cd `dirname $0`
+../src/konzola -n .:../src $*
+# for shared lib, use: opp_run -l ../src/konzola -n .:../src $*

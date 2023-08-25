@@ -1,0 +1,75 @@
+file 3477 1692351806                                            
+version 3
+run General-0-20230818-11:43:12-8492
+attr configname General
+attr datetime 20230818-11:43:12
+attr datetimef 20230818-114312
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Network
+attr processid 8492
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../../../../../Desktop/inet4.5/images
+config network Network
+config *.accessPoint.numRadios 1
+config *.windSensor.numRadios 1
+config *.tempSensor.numRadios 1
+config *.router.numRadios 1
+config *.router.isEnabled true
+config *.accessPoint.mobility.initialX 278m
+config *.accessPoint.mobility.initialY 145m
+config *.windSensor.mobility.initialX 461m
+config *.windSensor.mobility.initialY 58m
+config *.tempSensor.mobility.initialX 458m
+config *.tempSensor.mobility.initialY 228m
+config *.router.mobility.initialX 101m
+config *.router.mobility.initialY 169m
+config *.accessPoint.radio[*].typename inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211Nic
+config *.windSensor.radio[*].typename inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211Nic
+config *.tempSensor.radio[*].typename inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211Nic
+config *.router.radio[*].typename inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211Nic
+config *.ieee80211RadioMedium.radioIn[*].interfaceTableModule "\"accessPoint.interfaceTable\""
+config *.ieee80211RadioMedium.radioIn[*].interfaceTableModule "\"windSensor.interfaceTable\""
+config *.ieee80211RadioMedium.radioIn[*].interfaceTableModule "\"tempSensor.interfaceTable\""
+config *.ieee80211RadioMedium.radioIn[*].interfaceTableModule "\"router.interfaceTable\""
+config *.ieee80211RadioMedium.radioOut[*].interfaceTableModule "\"accessPoint.interfaceTable\""
+config *.ieee80211RadioMedium.radioOut[*].interfaceTableModule "\"windSensor.interfaceTable\""
+config *.ieee80211RadioMedium.radioOut[*].interfaceTableModule "\"tempSensor.interfaceTable\""
+config *.ieee80211RadioMedium.radioOut[*].interfaceTableModule "\"router.interfaceTable\""
+config *.ieee80211RadioMedium.radioIn[*].datarate 54Mbps
+config *.ieee80211RadioMedium.radioOut[*].datarate 54Mbps
+config *.ieee80211RadioMedium.radioIn[*].transmitter.communicationRange 200m
+config *.ieee80211RadioMedium.radioOut[*].transmitter.communicationRange 200m
+config *.integratedCanvasVisualizer.visualizations "\"p=host,device,conn\""
+config *.ieee80211RadioMedium.debug true
+
+vector 0 Network.accessPoint.wlan[0].mac.dcf frameSequenceActive:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source warmup(count(frameSequenceStarted)-count(frameSequenceFinished))
+attr title "frame sequence active"
+vector 1 Network.accessPoint.wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(count(packetEnqueued) - count(packetDequeued))"
+attr title "queue length"
+vector 2 Network.accessPoint.wlan[0].mac.dcf.channelAccess.contention backoffActive:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source warmup(count(backoffStarted)-count(backoffStopped))
+attr title "backoff active"
+0	3421 18 0 0 0 0 2 0 0 0 0
+1	3439 18 0 0 0 0 2 0 0 0 0
+2	3457 18 0 0 0 0 2 0 0 0 0
+
